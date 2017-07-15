@@ -1,0 +1,12 @@
+﻿@using TemplateEngine;
+@{var model = (Order) Model;}
+Customer ID: @model.CustomerID
+Customer Name: @model.CustomerName
+Order ID: @model.ID  
+Items:
+Quantity	Unit Price	Product
+    @foreach(var item in @model.LineItems) {
+  @item.Quantity @item.Price @item.ProductName
+}
+Tax: @model.Tax
+Order Total: @model.Total
